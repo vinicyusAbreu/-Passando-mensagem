@@ -1,26 +1,24 @@
-let $msg = document.getElementById("msg");
-let $vazio = document.querySelector(".vazio");
-let $saida = document.getElementById("saida");
-let $enviar = document.getElementById("enviar");
+const msg = document.getElementById("msg");
+const vazio = document.querySelector(".vazio");
+const saida = document.getElementById("saida");
+const enviar = document.getElementById("enviar");
 
-$msg.addEventListener("keyup", function(enter) {
-    let chave = enter.which || enter.keyCode;
-    if (chave === 13) {
-        vazio();
-    }
+function enviarMensagem() {
+  if (msg.value === "") {
+    vazio.style.display = "flex";
+    setTimeout(() => {
+      vazio.style.display = "none";
+    }, 1200);
+  } else {
+    saida.innerHTML = msg.value;
+    msg.value = "";
+  }
+}
 
+msg.addEventListener("keyup", (enter) => {
+  if (enter.which === 13 || enter.keyCode === 13) {
+    enviarMensagem();
+  }
 });
 
-$enviar.addEventListener("click", function() {
-    vazio();
-})
-
-function vazio() {
-    if ($msg.value === "") {
-        $vazio.style.display = "flex";
-        setTimeout(function() { $vazio.style.display = "none"; }, 1200);
-    } else {
-        $saida.innerHTML = $msg.value;
-        $msg.value = "";
-    }
-}
+enviar.addEventListener("click", enviarMensagem);

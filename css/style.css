@@ -7,7 +7,7 @@ body {
 .container {
     width: 100vw;
     height: 100vh;
-    background-color: rgb(243, 102, 161);
+    background-color: #1a1b4b;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,7 +16,7 @@ body {
 .box {
     width: 700px;
     max-height: 350px;
-    background-color: rgb(255, 255, 255);
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,8 +26,8 @@ body {
 
 h1,
 h2 {
-    color: rgb(218, 44, 189);
-    text-shadow: 1px 1px 2px rgb(247, 0, 255);
+    color: #f7a400;
+    text-shadow: 1px 1px 2px #000000;
 }
 
 input {
@@ -43,22 +43,26 @@ button {
     border-radius: 10px;
     border: none;
     color: whitesmoke;
-    background-color: deeppink;
+    background-color: #3e4491;
     outline: none;
     cursor: pointer;
+    transition: 0.2s;
 }
 
 button:hover {
-    color: rgb(46, 33, 46);
+    background-color: whitesmoke;
+    color: #3e4491;
+    border: 1px solid #3e4491;
 }
 
 button:active {
-    border: 3px solid rgb(117, 24, 74);
-    color: whitesmoke;
+    background-color: whitesmoke;
+    color: #3e4491;
+    border: 1px solid #3e4491;
 }
 
 p {
-    color: rgb(39, 41, 194);
+    color: #3e4491;
     font-size: 30px;
     font-weight: bold;
     margin-top: -10px;
@@ -76,6 +80,7 @@ p {
     border-radius: 5px;
     margin-top: 20px;
     display: none;
+
 }
 
 @media(max-width:450px) {
@@ -83,15 +88,18 @@ p {
         width: 320px;
         max-height: 350px;
     }
+
     input {
         width: 250px;
         height: 30px;
         margin-bottom: 30px;
     }
+
     h1,
     h2 {
         font-size: 16px;
     }
+
     p {
         font-size: 18px;
     }
